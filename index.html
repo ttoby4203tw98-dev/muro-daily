@@ -30,12 +30,21 @@
     border:1px solid rgba(255,255,255,.4); border-radius:30px; padding:6px 18px;}
 
   /* 台灣話題 */
+  .topics-head{display:flex; align-items:center; gap:10px; margin:26px 0 14px;}
+  .topics-head h2{font-size:18px; color:var(--berry); letter-spacing:3px;}
+  .topics-head .line{flex:1; height:2px; background:linear-gradient(90deg,var(--gold),transparent);}
+  .topics{display:grid; grid-template-columns:1fr; gap:14px;}
+  @media(min-width:680px){.topics{grid-template-columns:repeat(3,1fr);}}
   .topic{background:#fff; border:2px solid var(--gold); border-radius:14px;
-    padding:18px 22px; margin:26px 0 8px; box-shadow:0 4px 18px rgba(110,30,60,.06);}
-  .topic .tag{display:inline-block; background:var(--gold); color:#fff; font-size:12px;
+    padding:16px 18px; box-shadow:0 4px 18px rgba(110,30,60,.06); display:flex; flex-direction:column;}
+  .topic .tag{display:inline-block; align-self:flex-start; background:var(--gold); color:#fff; font-size:12px;
     padding:2px 12px; border-radius:20px; letter-spacing:2px; margin-bottom:8px;}
-  .topic h3{font-size:18px; color:var(--berry); margin-bottom:6px;}
-  .topic p{font-size:15px; color:var(--ink);}
+  .topic .tag.ent{background:#9C5BA8;}
+  .topic .tag.soc{background:#3E7CB1;}
+  .topic .tag.hot{background:var(--berry-soft);}
+  .topic h3{font-size:16px; color:var(--berry); margin-bottom:6px; line-height:1.45;}
+  .topic p{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .topic .more{margin-top:auto; font-size:12.5px; align-self:flex-start;}
 
   /* 區塊標題 */
   .sec{margin-top:38px;}
@@ -102,12 +111,31 @@
 
 <div class="wrap">
 
-  <!-- 今日台灣話題 -->
-  <div class="topic">
-    <span class="tag">今日台灣話題</span>
-    <h3>世界盃足球賽開踢！葡萄牙 5：0 大勝烏茲別克</h3>
-    <p>2026 世界盃 K 組小組賽今日凌晨進行，C 羅領軍的葡萄牙以 5 比 0 大勝烏茲別克，社群一片沸騰。四年一度的全民賽事話題，正是直播暖場、拉近與客人距離的好開場。
-      <a href="https://www.cna.com.tw/list/headlines.aspx" target="_blank" rel="noopener">中央社 ↗</a></p>
+  <!-- 今日台灣話題（三塊） -->
+  <div class="topics-head"><h2>今日台灣話題</h2><div class="line"></div></div>
+  <div class="topics">
+
+    <div class="topic">
+      <span class="tag ent">娛樂</span>
+      <h3>演唱會旺季開唱！本週末天王天團接力</h3>
+      <p>6/27 姜育恆、龜梨和也、KYUHYUN 接力開唱，下半年還有 BIGBANG、IVE、aespa 等華麗陣容。粉絲為看演出添新裝，正是穿搭買氣的好時機。</p>
+      <a class="more" href="https://stars.udn.com/star/story/10092/9243707" target="_blank" rel="noopener">噓！星聞 ↗</a>
+    </div>
+
+    <div class="topic">
+      <span class="tag soc">社會・民生</span>
+      <h3>夏季電費 6/1 啟動！本期凍漲，台電祭節電獎勵</h3>
+      <p>2026 夏季電價 6/1～9/30 適用、住宅每度維持約 3.78 元凍漲；省 1 度電回饋 0.6 元。冷氣調高 1 度省約 6%，搭涼感衣更省。</p>
+      <a class="more" href="https://news.tvbs.com.tw/life/3201267" target="_blank" rel="noopener">TVBS ↗</a>
+    </div>
+
+    <div class="topic">
+      <span class="tag hot">最熱門</span>
+      <h3>世界盃開踢！C 羅梅開二度領軍葡萄牙大勝</h3>
+      <p>2026 世界盃今日凌晨開打，C 羅梅開二度帶葡萄牙大勝烏茲別克，愛爾達全程轉播、社群一片沸騰。四年一度全民話題，最適合直播暖場。</p>
+      <a class="more" href="https://tw.sports.yahoo.com/news/2026%E4%B8%96%E8%B6%B3%E8%B3%BD%E8%B3%BD%E7%A8%8B%EF%BC%9A6%E6%9C%8820%E6%97%A5c%E7%B5%84%E3%80%81d%E7%B5%84%E5%B0%8F%E7%B5%84%E8%B3%BD%E7%AC%AC%E4%BA%8C%E8%BC%AA%EF%BC%81%E5%96%AE%E6%97%A54%E5%A0%B4%E8%B3%BD%E4%BA%8B%E6%99%82%E9%96%93%E3%80%81%E7%9B%B4%E6%92%AD%E8%BD%89%E6%92%AD%E7%B7%9A%E4%B8%8A%E7%9C%8B%E7%AE%A1%E9%81%93%E7%B8%BD%E6%95%B4%E7%90%86-%E9%87%8D%E9%BB%9E%E4%B8%80%E6%AC%A1%E7%9C%8B%EF%BC%81%E3%80%902026%E5%B9%B4%E5%9C%8B%E9%9A%9B%E8%B6%B3%E7%B8%BD%E4%B8%96%E7%95%8C%E7%9B%83%E3%80%91-053500623.html" target="_blank" rel="noopener">Yahoo 運動 ↗</a>
+    </div>
+
   </div>
 
   <!-- 一、蝦皮最新資訊 -->
@@ -231,7 +259,9 @@
   <div class="sources">
     <h3>資料來源</h3>
     <ul>
-      <li>中央社頭條新聞（世界盃話題）：<a href="https://www.cna.com.tw/list/headlines.aspx" target="_blank" rel="noopener">https://www.cna.com.tw/list/headlines.aspx</a></li>
+      <li>娛樂・演唱會旺季（噓！星聞）：<a href="https://stars.udn.com/star/story/10092/9243707" target="_blank" rel="noopener">stars.udn.com</a></li>
+      <li>社會・2026 夏季電費（TVBS）：<a href="https://news.tvbs.com.tw/life/3201267" target="_blank" rel="noopener">news.tvbs.com.tw</a>、<a href="https://www.ctee.com.tw/news/20260601700956-430104" target="_blank" rel="noopener">工商時報</a></li>
+      <li>最熱門・2026 世界盃（Yahoo 運動）：<a href="https://tw.sports.yahoo.com/" target="_blank" rel="noopener">tw.sports.yahoo.com</a>、<a href="https://www.cw.com.tw/article/5141398" target="_blank" rel="noopener">天下雜誌</a></li>
       <li>蝦皮 6 月購物嘉年華（國泰）：<a href="https://www.cathay-cube.com.tw/cathaybk/personal/event/overview/credit-card/online-shopping/202606/shopee202606_1" target="_blank" rel="noopener">cathay-cube.com.tw</a></li>
       <li>蝦皮 6 月網購活動（玉山銀行）：<a href="https://www.esunbank.com/zh-tw/personal/credit-card/discount/shopInfo?sno=2100_06" target="_blank" rel="noopener">esunbank.com</a></li>
       <li>蝦皮折扣碼整理（Calling Taiwan）：<a href="https://www.callingtaiwan.com.tw/%E8%9D%A6%E7%9A%AE%E6%8A%98%E6%89%A3%E7%A2%BC-shopee/" target="_blank" rel="noopener">callingtaiwan.com.tw</a></li>
