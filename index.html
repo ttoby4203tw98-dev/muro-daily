@@ -71,6 +71,10 @@
   /* 卡片 */
   .cards{display:grid; grid-template-columns:1fr; gap:14px;}
   @media(min-width:680px){.cards{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:680px){.cards.ai{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:980px){.cards.ai{grid-template-columns:repeat(4,1fr);}}
+  .cards.ai .card .src{color:#3E7CB1;}
+  .cards.ai .card h4{color:var(--berry);}
   .card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 16px 14px;
     box-shadow:0 3px 12px rgba(110,30,60,.05); display:flex; flex-direction:column;}
   .card .src{font-size:11px; color:var(--gold); letter-spacing:1px; margin-bottom:6px; font-weight:600;}
@@ -255,6 +259,42 @@
     <div class="slogan">賣別人沒有的質感，賺客人長久的信任。</div>
   </div>
 
+  <!-- 五、AI 更新大事 -->
+  <div class="sec">
+    <div class="sec-h"><div class="no">五</div><h2>AI 更新大事</h2><div class="line"></div></div>
+    <div class="cards ai">
+
+      <div class="card">
+        <div class="src">Anthropic · 6/9</div>
+        <h4>Claude Fable 5 / Mythos 5 登場，程式能力創高分</h4>
+        <p class="pain">新一代模型 SWE-bench Pro 編程測試達 80.3%，明顯領先同級；Anthropic 估值一度超越 OpenAI。</p>
+        <a class="more" href="https://news.pchome.com.tw/science/sunmedia/20260622/index-78209126486505329005.html" target="_blank" rel="noopener">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">OpenAI · 近日</div>
+        <h4>GPT-5.6 本週預計登場，主打「自主代理」</h4>
+        <p class="pain">OpenAI 重心從對話轉向 Agent 自主智能體，原生多模態處理文字、圖像、語音與影片，傳將推 Pro／Mini 版。</p>
+        <a class="more" href="https://n.yam.com/Article/20260622333860" target="_blank" rel="noopener">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">Google · I/O 2026</div>
+        <h4>Gemini 大升級，強化 agentic AI 與企業工具</h4>
+        <p class="pain">Google 推 Gemini Enterprise 與 Projects 平台，協助員工建立 AI 代理協作，正面對打 OpenAI、Anthropic。</p>
+        <a class="more" href="https://tw.stock.yahoo.com/news/google-o-2026-%E8%81%9A%E7%84%A6-ai-235412341.html" target="_blank" rel="noopener">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">OpenAI × Getty · 近日</div>
+        <h4>AI 生圖走向正版化：Getty 圖庫整合 ChatGPT</h4>
+        <p class="pain">全球最大商業圖庫 Getty Images 與 OpenAI 合作，授權圖片納入 ChatGPT 搜尋。<b>電商素材／商品圖更安心。</b></p>
+        <a class="more" href="https://ai.ettoday.net/news/3187386" target="_blank" rel="noopener">原文 ↗</a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- 資料來源 -->
   <div class="sources">
     <h3>資料來源</h3>
@@ -273,6 +313,9 @@
       <li>2026 春夏趨勢（獎金獵人）：<a href="https://dream.bhuntr.com/article/spring-summer-fashion-trend-2026" target="_blank" rel="noopener">dream.bhuntr.com</a></li>
       <li>2026 春夏 8 大趨勢（Wazaiii）：<a href="https://www.wazaiii.com/articles?id=runway-2026-spring-summer-trends" target="_blank" rel="noopener">wazaiii.com</a></li>
       <li>夏天穿搭技巧（白鳥麗子）：<a href="https://www.baibeauty.com/Article/Detail/96611" target="_blank" rel="noopener">baibeauty.com</a></li>
+      <li>AI・Anthropic／OpenAI 新模型（PChome、蕃新聞）：<a href="https://news.pchome.com.tw/science/sunmedia/20260622/index-78209126486505329005.html" target="_blank" rel="noopener">PChome</a>、<a href="https://n.yam.com/Article/20260622333860" target="_blank" rel="noopener">yam</a></li>
+      <li>AI・Google I/O 2026 Gemini（Yahoo 股市）：<a href="https://tw.stock.yahoo.com/news/google-o-2026-%E8%81%9A%E7%84%A6-ai-235412341.html" target="_blank" rel="noopener">tw.stock.yahoo.com</a></li>
+      <li>AI・Getty × OpenAI 圖庫合作（ETtoday）：<a href="https://ai.ettoday.net/news/3187386" target="_blank" rel="noopener">ai.ettoday.net</a></li>
     </ul>
     <p class="note">※ 蝦皮官方頁今日讀取時觸發人機驗證（CAPTCHA），未破解；蝦皮活動與優惠改以可查核之媒體／銀行活動頁佐證。檔期與名額以蝦皮官方頁面當下顯示為準，下單前請再確認。</p>
   </div>
