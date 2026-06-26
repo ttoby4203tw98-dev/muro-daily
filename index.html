@@ -3,75 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MURO 日報｜2026-06-26</title>
+<title>MURO 日報｜2026/06/27 週六</title>
 <style>
   :root{
-    --berry:#6e1f37; --berry-deep:#511428; --gold:#c8a45a; --gold-soft:#e7d3a6;
-    --bg:#faf6f2; --card:#ffffff; --ink:#33272b; --muted:#7a6a70; --line:#ecd9d0;
+    --berry:#7d2231; --berry-dark:#5e1623; --berry-soft:#a8455a;
+    --gold:#c79a4b; --cream:#faf5ef; --ink:#2b2326; --muted:#7a6f72;
+    --card:#ffffff; --line:#ecdfe2;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:860px;margin:0 auto;padding:0 18px 60px}
-  /* 封面 */
-  .cover{background:linear-gradient(135deg,var(--berry) 0%,var(--berry-deep) 100%);color:#fff;border-radius:0 0 26px 26px;padding:44px 30px 38px;text-align:center;box-shadow:0 10px 30px rgba(81,20,40,.25)}
-  .cover .brand{font-size:14px;letter-spacing:6px;color:var(--gold-soft);margin-bottom:14px}
-  .cover h1{font-size:46px;letter-spacing:8px;font-weight:900;margin-bottom:10px}
-  .cover .sub{font-size:15px;letter-spacing:2px;color:#f3e4d8;opacity:.95}
-  .cover .time{display:inline-block;margin-top:18px;font-size:13px;color:var(--berry-deep);background:var(--gold-soft);padding:5px 16px;border-radius:20px;letter-spacing:1px}
-  /* 區塊標題 */
-  .sec-title{display:flex;align-items:center;gap:10px;margin:38px 0 16px;font-size:21px;font-weight:800;color:var(--berry)}
-  .sec-title .no{background:var(--berry);color:#fff;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
-  /* 台灣話題 */
-  .topic{background:#fffdf7;border:2px solid var(--gold);border-radius:16px;padding:18px 22px;margin-top:26px;box-shadow:0 4px 14px rgba(200,164,90,.15)}
-  .topic .tag{display:inline-block;background:var(--gold);color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:14px;letter-spacing:1px;margin-bottom:8px}
-  .topic h3{font-size:18px;color:var(--berry-deep);margin-bottom:6px}
+  body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 18px 60px}
+  /* cover */
+  .cover{background:linear-gradient(135deg,var(--berry),var(--berry-dark));
+    color:#fff;text-align:center;padding:46px 22px 40px;border-radius:0 0 26px 26px;
+    box-shadow:0 8px 28px rgba(125,34,49,.25)}
+  .cover .brand{font-size:13px;letter-spacing:6px;color:var(--gold);font-weight:600}
+  .cover h1{font-size:46px;letter-spacing:8px;margin:8px 0 6px;font-weight:800}
+  .cover .sub{font-size:15px;letter-spacing:1px;opacity:.92}
+  .cover .date{display:inline-block;margin-top:16px;padding:6px 18px;border:1px solid rgba(255,255,255,.5);
+    border-radius:30px;font-size:14px;letter-spacing:2px}
+  .cover .upd{font-size:12px;opacity:.7;margin-top:10px}
+  /* topic */
+  .topic{background:#fff;border:2px solid var(--gold);border-radius:16px;
+    padding:18px 22px;margin:26px 0 8px;position:relative}
+  .topic .tag{position:absolute;top:-13px;left:20px;background:var(--gold);color:#fff;
+    font-size:13px;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:1px}
+  .topic h3{font-size:17px;color:var(--berry-dark);margin:6px 0 4px}
   .topic p{font-size:14.5px;color:var(--ink)}
-  /* 優惠券 */
+  /* section */
+  section{margin-top:34px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .sec-head .num{background:var(--berry);color:#fff;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none}
+  .sec-head h2{font-size:21px;color:var(--berry-dark);letter-spacing:1px}
+  /* coupons */
   .coupons{display:flex;flex-direction:column;gap:10px}
-  .coupon{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--berry);border-radius:12px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;transition:.15s}
-  .coupon:hover{box-shadow:0 4px 14px rgba(110,31,55,.12)}
-  .coupon .ci{flex:1;min-width:200px}
-  .coupon .cname{font-weight:700;font-size:15.5px;color:var(--berry-deep)}
-  .coupon .cdesc{font-size:13px;color:var(--muted);margin-top:2px}
-  .date-tag{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:.5px}
-  .dt-new{background:#fde7ec;color:#b3274d}
-  .dt-go{background:#eef5ec;color:#3f7a4a}
-  .btn{background:var(--berry);color:#fff!important;text-decoration:none;font-size:13px;font-weight:700;padding:7px 16px;border-radius:18px;white-space:nowrap}
-  .btn:hover{background:var(--berry-deep)}
-  .cat-note{background:#f7eef0;border-radius:12px;padding:14px 18px;margin-top:14px;font-size:14px}
-  .cat-note b{color:var(--berry)}
-  .cat-note a{color:var(--berry);font-weight:600;text-decoration:none;border-bottom:1px dotted var(--berry)}
-  /* 三卡 */
-  .cards{display:grid;grid-template-columns:1fr;gap:14px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 3px 10px rgba(81,20,40,.05)}
-  .card .src{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.5px;margin-bottom:6px}
-  .card h4{font-size:16.5px;color:var(--berry-deep);margin-bottom:8px}
-  .card .pain{font-size:14px;color:var(--ink);margin-bottom:8px}
-  .card .use{font-size:13.5px;background:#f7eef0;border-radius:10px;padding:9px 12px;color:#5c3a45}
-  .card .use b{color:var(--berry)}
-  .card .more{display:inline-block;margin-top:10px;font-size:13px;color:var(--berry);text-decoration:none;font-weight:700}
-  .card .more:hover{text-decoration:underline}
-  /* 行動重點 */
-  .actions{background:var(--berry);color:#fff;border-radius:16px;padding:22px 26px;margin-top:18px}
-  .actions h3{font-size:18px;margin-bottom:12px;color:var(--gold-soft);letter-spacing:1px}
-  .actions ol{padding-left:20px}
-  .actions li{margin-bottom:9px;font-size:15px}
-  .slogan{text-align:center;font-size:18px;font-weight:800;color:var(--berry);letter-spacing:2px;margin:34px 0 10px}
-  /* 來源 */
-  .sources{margin-top:30px;border-top:1px solid var(--line);padding-top:18px}
-  .sources h5{font-size:14px;color:var(--muted);margin-bottom:10px;letter-spacing:1px}
-  .sources a{display:block;font-size:12.5px;color:#8a6a72;text-decoration:none;margin-bottom:5px;word-break:break-all}
-  .sources a:hover{color:var(--berry)}
-  .foot{text-align:center;font-size:12px;color:var(--muted);margin-top:24px;letter-spacing:1px}
-  @media(max-width:560px){.cover h1{font-size:36px}.sec-title{font-size:18px}}
+  .coupon{background:#fff;border:1px solid var(--line);border-left:5px solid var(--berry-soft);
+    border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .coupon.new{border-left-color:var(--gold);background:#fffaf2}
+  .coupon .c-l{flex:1}
+  .coupon .c-title{font-weight:700;font-size:15px;color:var(--ink)}
+  .coupon .c-desc{font-size:13px;color:var(--muted);margin-top:2px}
+  .badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:14px;white-space:nowrap}
+  .badge.today{background:#e8f3ea;color:#2f7d46}
+  .badge.soon{background:#fdeede;color:#b87a18}
+  .badge.date{background:#f1e7ea;color:var(--berry)}
+  .coupon a.go{background:var(--berry);color:#fff;text-decoration:none;font-size:13px;font-weight:700;
+    padding:8px 14px;border-radius:20px;white-space:nowrap}
+  .coupon a.go:hover{background:var(--berry-dark)}
+  .cats{margin-top:14px;background:#fff;border:1px dashed var(--line);border-radius:12px;padding:14px 16px}
+  .cats b{color:var(--berry-dark);font-size:14px}
+  .cats .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .cats a{background:var(--cream);border:1px solid var(--line);color:var(--berry-dark);
+    text-decoration:none;font-size:13px;padding:6px 12px;border-radius:18px}
+  .cats a:hover{background:var(--berry);color:#fff}
+  /* card grid */
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+    display:flex;flex-direction:column}
+  .card .src{font-size:11.5px;color:var(--gold);font-weight:700;margin-bottom:6px}
+  .card h4{font-size:15.5px;color:var(--berry-dark);margin-bottom:8px;line-height:1.5}
+  .card .lbl{font-size:12px;font-weight:700;color:var(--berry-soft);margin-top:8px}
+  .card p{font-size:13.5px;color:var(--ink);margin-top:2px}
+  .card a.more{margin-top:auto;padding-top:12px;font-size:13px;color:var(--berry);
+    font-weight:700;text-decoration:none}
+  .card a.more:hover{text-decoration:underline}
+  /* action */
+  .action{background:linear-gradient(135deg,#fff,#fdf4f6);border:1px solid var(--line);
+    border-radius:16px;padding:20px 24px;margin-top:18px}
+  .action ol{margin-left:20px}
+  .action li{font-size:14.5px;margin:8px 0;padding-left:4px}
+  .slogan{text-align:center;margin-top:30px;padding:24px;background:var(--berry-dark);color:#fff;
+    border-radius:16px;font-size:18px;font-weight:700;letter-spacing:2px}
+  .slogan span{color:var(--gold)}
+  /* sources */
+  .sources{margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+  .sources h5{font-size:13px;color:var(--muted);margin-bottom:8px;letter-spacing:1px}
+  .sources ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+  .sources a{font-size:12px;color:var(--berry-soft);text-decoration:none;word-break:break-all}
+  .sources a:hover{text-decoration:underline}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
 </style>
 </head>
 <body>
 <div class="cover">
-  <div class="brand">M U R O 暮 若</div>
+  <div class="brand">MURO 暮若</div>
   <h1>MURO 日報</h1>
   <div class="sub">蝦皮資訊 × 女性痛點 × 時尚情報</div>
-  <div class="time">更新時間：2026/06/26（週五）07:00</div>
+  <div class="date">2026/06/27（週六）</div>
+  <div class="upd">更新時間：2026/06/27 07:07（台灣時間）</div>
 </div>
 
 <div class="wrap">
@@ -79,134 +101,196 @@
   <!-- 今日台灣話題 -->
   <div class="topic">
     <span class="tag">今日台灣話題</span>
-    <h3>豪雨襲南台灣，6/26 屏東全縣＋高雄10區停班停課</h3>
-    <p>受鋒面接近與西南風增強影響，南台灣連日豪雨。今日（6/26）屏東縣全縣、高雄市瑪夏、桃源、甲仙、六龜、茂林、美濃、旗山、內門、杉林、田寮等10區宣布停班停課，民眾外出注意安全、備好雨具與防滑。<a href="https://news.tvbs.com.tw/life/3225371" target="_blank" style="color:#b3274d;font-weight:700;text-decoration:none;">原文 ↗</a></p>
+    <h3>⚽ 2026 世界盃進入小組賽最後一輪，今日單日 6 場較勁</h3>
+    <p>由美加墨三國首度共辦的 FIFA 世界盃正熱，6/27（週六）來到小組賽第三輪，單日 6 場同步開打、晉級 32 強名單即將底定。台灣由愛爾達電視轉播全部 104 場，多數賽事落在凌晨 03:00 到中午 12:00，是早餐時段的全民共同話題。可順勢用「邊看球邊逛直播」當開場暖場。
+    <a href="https://tw.sports.yahoo.com/news/2026%E4%B8%96%E8%B6%B3%E8%B3%BD%E8%B3%BD%E7%A8%8B-%E8%B3%BD%E4%BA%8B%E6%99%82%E9%96%93-053500623.html" target="_blank" style="color:var(--berry);font-weight:700;text-decoration:none">原文 ↗</a></p>
   </div>
 
   <!-- 一、蝦皮最新資訊 -->
-  <div class="sec-title"><span class="no">一</span>蝦皮最新資訊</div>
-  <div class="coupons">
-    <div class="coupon">
-      <div class="ci"><div class="cname">77 購物節・會員日領全站 $100 券 <span class="date-tag dt-new">今日新增</span></div><div class="cdesc">7.7 年中購物節暖身，會員日領券、滿額再享回饋，女裝夏季新品入手好時機</div></div>
-      <a class="btn" href="https://shopee.tw/m/7-7" target="_blank">前往領券</a>
+  <section>
+    <div class="sec-head"><div class="num">一</div><h2>蝦皮最新資訊</h2></div>
+    <div class="coupons">
+
+      <div class="coupon new">
+        <div class="c-l">
+          <div class="c-title">🆕 每週日搶商城 95 折券，最高折 $1,500</div>
+          <div class="c-desc">明日（6/28 週日）開搶，今天先把商品加入購物車卡位</div>
+        </div>
+        <span class="badge soon">明日 6/28</span>
+        <a class="go" href="https://shopee.tw/m/mallsunday" target="_blank">前往</a>
+      </div>
+
+      <div class="coupon">
+        <div class="c-l">
+          <div class="c-title">全站大免運．免運 $99 起</div>
+          <div class="c-desc">全站免運活動進行中，搭配滿額更划算</div>
+        </div>
+        <span class="badge today">今日 6/27</span>
+        <a class="go" href="https://shopee.tw/m/free-shipping" target="_blank">前往</a>
+      </div>
+
+      <div class="coupon">
+        <div class="c-l">
+          <div class="c-title">領全站 $100 券．全館 $69 免運</div>
+          <div class="c-desc">首頁可領，提醒粉絲開播前先領券再下單</div>
+        </div>
+        <span class="badge today">今日 6/27</span>
+        <a class="go" href="https://shopee.tw/" target="_blank">前往</a>
+      </div>
+
+      <div class="coupon">
+        <div class="c-l">
+          <div class="c-title">銀行刷卡優惠</div>
+          <div class="c-desc">指定銀行信用卡回饋，客單高時提醒粉絲使用</div>
+        </div>
+        <span class="badge date">活動中</span>
+        <a class="go" href="https://shopee.tw/m/bank-promo" target="_blank">前往</a>
+      </div>
+
+      <div class="coupon">
+        <div class="c-l">
+          <div class="c-title">蝦皮特選 Shopee Choice</div>
+          <div class="c-desc">特選商品免運＋退貨保障，適合搭配引流款</div>
+        </div>
+        <span class="badge date">活動中</span>
+        <a class="go" href="https://shopee.tw/shopee_choice_hl" target="_blank">前往</a>
+      </div>
+
+      <div class="coupon">
+        <div class="c-l">
+          <div class="c-title">7.7 年中慶預告</div>
+          <div class="c-desc">下波大檔將至，今天可預告粉絲關注、養購物車</div>
+        </div>
+        <span class="badge soon">即將開跑</span>
+        <a class="go" href="https://shopee.tw/m/7-7" target="_blank">前往</a>
+      </div>
+
     </div>
-    <div class="coupon">
-      <div class="ci"><div class="cname">全站大免運 <span class="date-tag dt-go">活動進行中</span></div><div class="cdesc">全站指定商品大免運，輕量單品、配件一次補齊更划算</div></div>
-      <a class="btn" href="https://shopee.tw/m/free-shipping" target="_blank">前往</a>
+
+    <div class="cats">
+      <b>女裝／內衣／服飾類目重點：</b>
+      <div class="chips">
+        <a href="https://shopee.tw/%E5%A5%B3%E7%94%9F%E8%A1%A3%E8%91%97-cat.11040766" target="_blank">女生衣著</a>
+        <a href="https://shopee.tw/%E5%85%A7%E7%9D%A1%E8%A1%A3-cat.11040766.11040770" target="_blank">內睡衣</a>
+        <a href="https://shopee.tw/%E6%B4%8B%E8%A3%9D-cat.11040766.11042286" target="_blank">洋裝</a>
+        <a href="https://shopee.tw/%E5%A5%B3%E7%94%9F%E9%85%8D%E4%BB%B6-%E9%BB%83%E9%87%91-cat.11041224" target="_blank">女生配件／黃金</a>
+      </div>
     </div>
-    <div class="coupon">
-      <div class="ci"><div class="cname">免運 $99 起・減量包裝專區 <span class="date-tag dt-go">活動進行中</span></div><div class="cdesc">$99 起免運，環保減量包裝商品，質感生活選物</div></div>
-      <a class="btn" href="https://shopee.tw/m/unpackaged" target="_blank">前往</a>
-    </div>
-    <div class="coupon">
-      <div class="ci"><div class="cname">蝦皮特選・全館 $69 免運 <span class="date-tag dt-go">活動進行中</span></div><div class="cdesc">蝦皮特選嚴選商品，$69 即享免運，小額補貨首選</div></div>
-      <a class="btn" href="https://shopee.tw/shopee_choice_hl" target="_blank">前往</a>
-    </div>
-    <div class="coupon">
-      <div class="ci"><div class="cname">銀行刷卡優惠 <span class="date-tag dt-go">活動進行中</span></div><div class="cdesc">指定銀行信用卡刷卡回饋，結帳前先比一比省更多</div></div>
-      <a class="btn" href="https://shopee.tw/m/bank-promo" target="_blank">前往</a>
-    </div>
-    <div class="coupon">
-      <div class="ci"><div class="cname">超級品牌日 <span class="date-tag dt-go">活動進行中</span></div><div class="cdesc">品牌旗艦限定優惠，質感女裝、內衣品牌同步參戰</div></div>
-      <a class="btn" href="https://shopee.tw/m/superbrandday" target="_blank">前往</a>
-    </div>
-  </div>
-  <div class="cat-note">
-    <b>女裝／內衣／服飾類目重點：</b>夏季女生衣著熱搜聚焦「涼感、顯瘦、好穿搭」，建議主打洋裝與寬褲。類目直達：
-    <a href="https://shopee.tw/洋裝-cat.11040766.11042286" target="_blank">洋裝</a>、
-    <a href="https://shopee.tw/上衣類-cat.11040766.11040767" target="_blank">上衣</a>、
-    <a href="https://shopee.tw/內睡衣-cat.11040766.11040770" target="_blank">內睡衣</a>、
-    <a href="https://shopee.tw/裙子-cat.11040766.11042297" target="_blank">裙子</a>、
-    <a href="https://shopee.tw/長褲-cat.11040766.11042305" target="_blank">長褲</a>、
-    <a href="https://shopee.tw/外套-cat.11040766.11042314" target="_blank">外套</a>。
-  </div>
+  </section>
 
   <!-- 二、女性痛點 -->
-  <div class="sec-title"><span class="no">二</span>女性痛點（時事・天氣・新聞・評比）</div>
-  <div class="cards">
-    <div class="card">
-      <div class="src">天氣｜潮健康・中央氣象署 2026/06</div>
-      <h4>高溫 32–34°C＋紫外線過量，防曬補擦不足</h4>
-      <p class="pain">夏季 UV 指數常落在「過量」到「危險」，台東更有焚風、局部 36°C 高溫。多數人出門只擦一次防曬，兩小時後防護力早已變薄。</p>
-      <div class="use"><b>對應選品：</b>抗 UV（UPF 認證）涼感外套、防曬罩衫、薄長袖——一件抵兩件，外出通勤、接送都用得到。</div>
-      <a class="more" href="https://coolhealth.com.tw/healthtrend/daily-sun-protection-details-should-not-be-overlooked" target="_blank">原文 ↗</a>
+  <section>
+    <div class="sec-head"><div class="num">二</div><h2>女性痛點（時事・天氣・新聞・評比）</h2></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="src">天氣｜中央氣象署 6/25 更新</div>
+        <h4>溫暖偏熱、日夜溫差大，週日降雨機率增</h4>
+        <p>6/27–28 天氣溫暖，但日夜溫差大；週日（6/28）起降雨機率提升。</p>
+        <div class="lbl">痛點</div>
+        <p>早晚冷氣房與戶外溫差大，午後又可能陣雨，外出穿搭難拿捏。</p>
+        <div class="lbl">對應選品</div>
+        <p>涼感薄外套／小開衫、防潑水單品，一件好穿脫又能擋雨擋曬。</p>
+        <a class="more" href="https://www.cwa.gov.tw/V8/C/W/week.html" target="_blank">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">評比｜Bella 儂儂．beauty321</div>
+        <h4>2026 防曬外套評比：遮蔽度與透氣才是關鍵</h4>
+        <p>評比提醒別只看「涼感」二字，要看背部透氣、腋下悶不悶、遮蔽範圍夠不夠；色系建議深灰、卡其、霧藍等中間色。</p>
+        <div class="lbl">痛點</div>
+        <p>怕熱又怕曬，純黑太悶、全白顯髒，挑色挑款很糾結。</p>
+        <div class="lbl">對應選品</div>
+        <p>UPF50+ 涼感防曬外套，主打中間色系與高遮蔽版型。</p>
+        <a class="more" href="https://www.bella.tw/articles/trends/57585/sun-protection-jacket-recommendations" target="_blank">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">新聞｜JUKSY．經濟日報</div>
+        <h4>6 月折扣季＋618 年中慶，小資族忙找省錢術</h4>
+        <p>ZARA 等品牌 6 月折扣季開跑、618 年中慶買氣旺，但物價高漲下，女性更在意「買得值不值」。</p>
+        <div class="lbl">痛點</div>
+        <p>想買質感單品又怕亂花錢，常買到不耐穿、難搭配的衣服。</p>
+        <div class="lbl">對應選品</div>
+        <p>主打「領券更划算＋一衣多穿」的耐看基本款，強調 CP 值。</p>
+        <a class="more" href="https://www.juksy.com/article/134210" target="_blank">原文 ↗</a>
+      </div>
+
     </div>
-    <div class="card">
-      <div class="src">新聞・天氣｜星之旅者・東森新聞 2026/06</div>
-      <h4>梅雨轉颱風季，午後雷陣雨與突來豪雨</h4>
-      <p class="pain">6 月下旬鋒面北抬、副高西伸，天氣型態由梅雨季轉入颱風季，午後雷陣雨與局部豪雨頻繁，出門淋一身、衣物悶濕難乾是日常困擾。</p>
-      <div class="use"><b>對應選品：</b>快乾免燙的雪紡上衣、防潑水薄外套、好收納的輕便款，搭配室內外溫差的洋裝層次穿搭。</div>
-      <a class="more" href="https://news.ebc.net.tw/news/living/556343" target="_blank">原文 ↗</a>
-    </div>
-    <div class="card">
-      <div class="src">評比｜方格子 vocus・Bella 儂儂 2026</div>
-      <h4>涼感衣百百種，沒看認證等於白買</h4>
-      <p class="pain">市售涼感衣品質落差大，涼感值 Q-Max 須 >0.13 才算合格；不少人買到的只是普通排汗衫，悶熱、起靜電、洗幾次就失效。</p>
-      <div class="use"><b>對應選品：</b>主打「雙面布＋玉石／天絲涼感纖維＋抗 UV」三合一女裝，直播時秀 SGS／UPF 標示，建立專業信任。</div>
-      <a class="more" href="https://vocus.cc/article/69db18acfd897800011334c6" target="_blank">原文 ↗</a>
-    </div>
-  </div>
+  </section>
 
   <!-- 三、時尚情報看板 -->
-  <div class="sec-title"><span class="no">三</span>時尚情報看板</div>
-  <div class="cards">
-    <div class="card">
-      <div class="src">時尚趨勢｜Dream &amp; Hunter 獎金獵人</div>
-      <h4>2026 春夏 6 大重點：柔美蕾絲・緞面・透膚層次</h4>
-      <p class="pain">柔美蕾絲、高級感緞面、復古圓點與透膚設計成為焦點，強調溫柔又有質感的層次穿搭。</p>
-      <div class="use"><b>怎麼用：</b>挑一款蕾絲拼接或緞面洋裝當直播主打，主訴「顯氣質、藏小腹」，鎖定 30–50 歲想優雅又涼爽的客群。</div>
-      <a class="more" href="https://dream.bhuntr.com/article/spring-summer-fashion-trend-2026" target="_blank">原文 ↗</a>
+  <section>
+    <div class="sec-head"><div class="num">三</div><h2>時尚情報看板</h2></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="src">wazaiii 時尚誌</div>
+        <h4>2026 春夏 8 大趨勢：飽和色彩、空氣感剪裁</h4>
+        <p>時裝週點名飽和色塊、輕盈空氣感剪裁與透膚輕料是本季主旋律。</p>
+        <div class="lbl">怎麼用</div>
+        <p>直播主視覺擺一兩件飽和色上衣帶動鏡頭吸睛，帶出「夏日換色」話題。</p>
+        <a class="more" href="https://www.wazaiii.com/articles?id=runway-2026-spring-summer-trends" target="_blank">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">Dream &amp; Hunter 獎金獵人</div>
+        <h4>2026 春夏 6 大重點：柔美蕾絲、緞面、透膚層次</h4>
+        <p>柔美蕾絲、高級緞面、復古圓點、透膚層次穿搭是今夏質感關鍵字。</p>
+        <div class="lbl">怎麼用</div>
+        <p>用內搭背心＋透膚上衣示範層次，呼應 MURO 內衣外穿與質感定位。</p>
+        <a class="more" href="https://dream.bhuntr.com/article/spring-summer-fashion-trend-2026" target="_blank">原文 ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="src">白鳥麗子 Bai Beauty</div>
+        <h4>夏天穿搭 5 技巧：寬鬆上衣＋寬褲修飾身形</h4>
+        <p>主打「鬆弛感」造型，寬鬆簡約上衣搭寬褲，自然顯瘦又有搭配感。</p>
+        <div class="lbl">怎麼用</div>
+        <p>針對 30–50 歲身形，主推落肩上衣＋寬褲的顯瘦穿搭示範。</p>
+        <a class="more" href="https://www.baibeauty.com/Article/Detail/96611" target="_blank">原文 ↗</a>
+      </div>
+
     </div>
-    <div class="card">
-      <div class="src">時尚趨勢｜Wazaiii 時尚評論網</div>
-      <h4>2026 春夏 8 大趨勢：飽和色彩・空氣感剪裁</h4>
-      <p class="pain">時裝週看點落在飽和暖色、空氣感輕盈剪裁與羽毛等輕量元素，整體走向「輕、透、有顏色」。</p>
-      <div class="use"><b>怎麼用：</b>用一件亮色（暖黃、珊瑚橘）單品打破夏季黑白灰，腳本帶「顯白、有精神」，刺激衝動下單。</div>
-      <a class="more" href="https://www.wazaiii.com/articles?id=runway-2026-spring-summer-trends" target="_blank">原文 ↗</a>
-    </div>
-    <div class="card">
-      <div class="src">穿搭技巧｜白鳥麗子 BAIBEAUTY</div>
-      <h4>夏天穿搭 5 技巧：寬褲落肩＋雪紡顯瘦</h4>
-      <p class="pain">寬鬆上衣配寬褲營造「鬆而有型」，雪紡輕透又能修飾身形，是夏天最討喜的顯瘦組合。</p>
-      <div class="use"><b>怎麼用：</b>直播做「一套搭三套」示範：寬褲＋落肩上衣＋薄外套，主打「遮肉、涼爽、好搭」，提升連帶購買。</div>
-      <a class="more" href="https://www.baibeauty.com/Article/Detail/96611" target="_blank">原文 ↗</a>
-    </div>
-  </div>
+  </section>
 
   <!-- 四、本日行動重點 -->
-  <div class="sec-title"><span class="no">四</span>本日行動重點</div>
-  <div class="actions">
-    <h3>今天直播這樣打</h3>
-    <ol>
-      <li>主打「抗 UV 涼感」三合一女裝，秀 UPF／SGS 認證，正面打中防曬與涼感痛點。</li>
-      <li>搭上 77 購物節暖身，提醒粉絲先領全站 $100 券＋全站免運，營造「現在買最划算」。</li>
-      <li>南部豪雨停班停課，主推快乾、防潑水、好收納的雨季穿搭，連帶薄外套與洋裝層次。</li>
-      <li>用「寬褲落肩＋雪紡顯瘦」做一套搭三套示範，提高客單與連帶購買。</li>
-    </ol>
-  </div>
+  <section>
+    <div class="sec-head"><div class="num">四</div><h2>本日行動重點</h2></div>
+    <div class="action">
+      <ol>
+        <li><b>週六鋪墊、週日衝刺：</b>提醒粉絲明日（6/28）開搶商城 95 折券（最高折 $1,500），今天先把心儀商品加入購物車卡位。</li>
+        <li><b>直播主打涼感防曬外套＋中間色：</b>呼應「日夜溫差大、週日降雨」與防曬評比，主推一件好穿脫的薄外套。</li>
+        <li><b>緊扣折扣季氛圍：</b>強調「先領全站 $100 券、$99 免運再下單」，主打一衣多穿、買得值。</li>
+        <li><b>視覺顯瘦示範：</b>用一件飽和色單品＋寬褲做落肩顯瘦穿搭，連動時尚趨勢吸睛。</li>
+      </ol>
+    </div>
+  </section>
 
-  <div class="slogan">「賣別人沒有的質感，賺客人長久的信任。」</div>
+  <div class="slogan">賣別人沒有的質感，賺客人<span>長久的信任</span>。</div>
 
-  <!-- 來源 -->
+  <!-- 資料來源 -->
   <div class="sources">
     <h5>資料來源</h5>
-    <a href="https://shopee.tw/m/7-7" target="_blank">蝦皮 77 購物節 — https://shopee.tw/m/7-7</a>
-    <a href="https://shopee.tw/m/free-shipping" target="_blank">蝦皮全站大免運 — https://shopee.tw/m/free-shipping</a>
-    <a href="https://shopee.tw/m/unpackaged" target="_blank">蝦皮免運$99起 — https://shopee.tw/m/unpackaged</a>
-    <a href="https://shopee.tw/shopee_choice_hl" target="_blank">蝦皮特選$69免運 — https://shopee.tw/shopee_choice_hl</a>
-    <a href="https://shopee.tw/m/bank-promo" target="_blank">蝦皮銀行刷卡優惠 — https://shopee.tw/m/bank-promo</a>
-    <a href="https://shopee.tw/m/superbrandday" target="_blank">蝦皮超級品牌日 — https://shopee.tw/m/superbrandday</a>
-    <a href="https://news.tvbs.com.tw/life/3225371" target="_blank">TVBS新聞網 — 6/26 屏東高雄停班停課</a>
-    <a href="https://coolhealth.com.tw/healthtrend/daily-sun-protection-details-should-not-be-overlooked" target="_blank">潮健康 — 六月盛夏紫外線防曬</a>
-    <a href="https://news.ebc.net.tw/news/living/556343" target="_blank">東森新聞 — 出梅訊號與颱風季</a>
-    <a href="https://vocus.cc/article/69db18acfd897800011334c6" target="_blank">方格子 vocus — 2026 機能涼感衫評比</a>
-    <a href="https://www.bella.tw/articles/news/57797/cooling-shirt-guide" target="_blank">Bella 儂儂 — 涼感衣怎麼挑5重點</a>
-    <a href="https://dream.bhuntr.com/article/spring-summer-fashion-trend-2026" target="_blank">Dream &amp; Hunter — 2026春夏流行趨勢</a>
-    <a href="https://www.wazaiii.com/articles?id=runway-2026-spring-summer-trends" target="_blank">Wazaiii — 2026春夏8大趨勢</a>
-    <a href="https://www.baibeauty.com/Article/Detail/96611" target="_blank">白鳥麗子 — 夏天穿搭5技巧</a>
+    <ul>
+      <li><a href="https://shopee.tw/" target="_blank">蝦皮購物首頁（活動／優惠券）— shopee.tw</a></li>
+      <li><a href="https://shopee.tw/m/mallsunday" target="_blank">蝦皮 每週日商城 95 折券 — shopee.tw/m/mallsunday</a></li>
+      <li><a href="https://shopee.tw/m/free-shipping" target="_blank">蝦皮 全站大免運 — shopee.tw/m/free-shipping</a></li>
+      <li><a href="https://shopee.tw/m/bank-promo" target="_blank">蝦皮 銀行刷卡優惠 — shopee.tw/m/bank-promo</a></li>
+      <li><a href="https://shopee.tw/m/7-7" target="_blank">蝦皮 7.7 年中慶 — shopee.tw/m/7-7</a></li>
+      <li><a href="https://www.cwa.gov.tw/V8/C/W/week.html" target="_blank">中央氣象署 一週天氣預報 — cwa.gov.tw</a></li>
+      <li><a href="https://www.bella.tw/articles/trends/57585/sun-protection-jacket-recommendations" target="_blank">Bella 儂儂 2026 防曬外套推薦 — bella.tw</a></li>
+      <li><a href="https://www.juksy.com/article/134210" target="_blank">JUKSY ZARA 2026 折扣季懶人包 — juksy.com</a></li>
+      <li><a href="https://www.wazaiii.com/articles?id=runway-2026-spring-summer-trends" target="_blank">wazaiii 2026 春夏 8 大趨勢 — wazaiii.com</a></li>
+      <li><a href="https://dream.bhuntr.com/article/spring-summer-fashion-trend-2026" target="_blank">Dream &amp; Hunter 2026 春夏 6 大重點 — dream.bhuntr.com</a></li>
+      <li><a href="https://www.baibeauty.com/Article/Detail/96611" target="_blank">白鳥麗子 夏天穿搭 5 技巧 — baibeauty.com</a></li>
+      <li><a href="https://tw.sports.yahoo.com/news/2026%E4%B8%96%E8%B6%B3%E8%B3%BD%E8%B3%BD%E7%A8%8B-%E8%B3%BD%E4%BA%8B%E6%99%82%E9%96%93-053500623.html" target="_blank">Yahoo 運動 2026 世足賽程 — tw.sports.yahoo.com</a></li>
+      <li><a href="https://www.bnext.com.tw/article/91241/2026-fifa-world-cup-taiwan" target="_blank">數位時代 2026 世界盃台灣轉播懶人包 — bnext.com.tw</a></li>
+    </ul>
   </div>
 
-  <div class="foot">MURO 暮若 ・ MURO 日報 ・ 每日早晨 07:00 自動產出</div>
+  <footer>MURO 暮若 ｜ MURO 日報 · 每日早上 7:00 自動更新 ｜ 本報連結與日期均經查核</footer>
+
 </div>
 </body>
 </html>
